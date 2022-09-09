@@ -1,0 +1,8 @@
+.fabout {
+    display: 'flex';
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;    
+    padding: '25px';
+    color: 'white';
+}
