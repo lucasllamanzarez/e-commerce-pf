@@ -9,7 +9,7 @@ const ItemDetail = () => {
 	let { id } = useParams();
 
 	useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
+        fetch(`https://fakestoreapi.com/products/${id}`)
     .then(res=>res.json())
 .then(json=>setProduct(json))
 },
