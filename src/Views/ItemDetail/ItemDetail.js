@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './ItemDetail.css';
 import { useParams } from 'react-router';
-import Item from '../../components/Card/Item';
+import Item2 from '../../components/Card/Item2';
 
 const ItemDetail = () => {
 	const [product, setProduct] = useState([]);
@@ -18,13 +18,7 @@ const ItemDetail = () => {
 
 	return (
 		<div className='List-detail'>
-			{product.map((prod) => {
-				return (
-					<div>
-						<Item data={prod} />
-					</div>
-				);
-			})}
+				<Item2 data={product} />
 		</div>
 	);
 };

@@ -25,8 +25,8 @@ const NavBar = () => {
 
                 <nav className={ `barraNav-nav ${menu ? 'isActive' : ''}`}>
                     <ul className="barraNav-ul">
-                        <Link to ='/About' className="barraNav-li">Sobre Nosotros</Link>
                         <Link to ='/' className="barraNav-li">Productos</Link>
+                        <Link to ='/About' className="barraNav-li">Sobre Nosotros</Link>
                         <Link to ='/Contact' className="barraNav-li">Contactanos</Link>
                         <li className="barraNav-li"><Cartwidget /></li>
 
