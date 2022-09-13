@@ -28,7 +28,7 @@ const NavBar = () => {
                         <Link to ='/' className="barraNav-li">Productos</Link>
                         <Link to ='/About' className="barraNav-li">Sobre Nosotros</Link>
                         <Link to ='/Contact' className="barraNav-li">Contactanos</Link>
-                        <li className="barraNav-li"><Cartwidget /></li>
+                        <Link to = '/cart' className="barraNav-li"><Cartwidget /></Link>
 
                     </ul>
                 </nav>

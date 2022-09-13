@@ -9,6 +9,7 @@ import Home from './Views/Home/Home';
 import About from './Views/About/About';
 import Contact from './Views/Contact/Contact';
 import ItemDetail from './Views/ItemDetail/ItemDetail';
+import CartWidget from './components/Cartwidget/Cartwidget';
  
 
 const App = () => {
@@ -21,6 +22,7 @@ const App = () => {
                     <Route path='/about' element={<About />}/>
                     <Route path='/contact' element={<Contact />}/>
                     <Route path='/detail/:id' element={<ItemDetail />}/>
+                    <Route path='/cart' element={<CartWidget />}/>
               </Routes>
           </div>
       </Router>

@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Button, CardActions} from '@mui/material';
 
 //Falta agregar las prop al momento de agregar una BD
-let Itemcount = () => {
+const Itemcount = ({onAdd}) => {
     let [counter, setcounter] = useState(1)
     const stock= 10
 
@@ -32,7 +32,10 @@ let Itemcount = () => {
         <Button size="small" color="primary" onClick={handlecountup}>
           +
         </Button>
-            
+        <Button size="small" color="primary" onClick={() => onAdd(counter)}>
+            Agregar Producto
+          </Button>
+          
         </CardActions>    
         
     )
