@@ -9,7 +9,7 @@ const Item = ({data}) => {
           component="img"
           height="200"
           image={data.image}
-          alt="green iguana"
+          alt="Productos RiseTech"
         />
         <CardContent>
           <Typography gutterBottom variant="h5" component="div">
