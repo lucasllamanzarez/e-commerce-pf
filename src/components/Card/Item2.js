@@ -1,16 +1,21 @@
 import {Button, Card, CardContent, CardMedia, Typography, CardActions, CardActionArea} from '@mui/material';
 import Itemcount from '../Items/Itemcount';
+import { useCartContext } from '../Cartwidget/Cartcontext'; 
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+
 
 const Item2 = ({data}) => {
   // Se setea estado de carrito en falso para poder cargarlo en el onAdd
   const [goToCart, setGoToCart] = useState(false);
+  const { addProduct } = useCartContext();
 
     //Funciona onAdd que permite agregar la cantidad de elementos deseados
       const onAdd = (quantity) => {
         alert(`Agregaste ${quantity} unidades al carrito`);
             setGoToCart(true);
+              addProduct(data, quantity);
+            
   }
 
     return (
