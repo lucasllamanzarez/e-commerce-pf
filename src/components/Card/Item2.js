@@ -8,13 +8,13 @@ import { Link } from 'react-router-dom';
 const Item2 = ({data}) => {
   // Se setea estado de carrito en falso para poder cargarlo en el onAdd
   const [goToCart, setGoToCart] = useState(false);
-  const { addProduct } = useCartContext();
+  const { addItem } = useCartContext();
 
     //Funciona onAdd que permite agregar la cantidad de elementos deseados
       const onAdd = (quantity) => {
         alert(`Agregaste ${quantity} unidades al carrito`);
             setGoToCart(true);
-              addProduct(data, quantity);
+              addItem(data, quantity);
             
   }
 
