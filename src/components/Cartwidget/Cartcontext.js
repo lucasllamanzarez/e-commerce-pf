@@ -13,10 +13,17 @@ const CartProvider = ({ children }) => {
             //Remover item carrito
             const remItem = (id) => setCart(cart.filter(product => product.id !== id));
                 //Agregar Item
-                    const addItem = (item, newQuantity) => {
-                        const newCart = cart.filter(prod => prod.id !== item.id);
-                            newCart.push({...item, quantity: newQuantity});
-                            setCart(newCart)
+                    const addItem = (item, quantity) => {
+                        let newCart;
+                        let product = cart.find(product => product.id === item.id);
+                        if (product) {
+                            product.quantity += quantity;
+                            newCart =[...cart];
+                        } else {
+                                product = {...item, quantity: quantity};
+                                newCart = [...cart, product];
+                        }
+                        setCart(newCart)
                     }
               
 
