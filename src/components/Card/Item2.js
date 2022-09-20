@@ -3,6 +3,7 @@ import Itemcount from '../Items/Itemcount';
 import { useCartContext } from '../Cartwidget/Cartcontext'; 
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 
 const Item2 = ({data}) => {
@@ -12,7 +13,9 @@ const Item2 = ({data}) => {
 
     //Funciona onAdd que permite agregar la cantidad de elementos deseados
       const onAdd = (quantity) => {
-        alert(`Agregaste ${quantity} unidades al carrito`);
+        Swal.fire( 'Producto Agregado',
+                    `Agregaste ${quantity} uni. al carrito`,
+                    'info');
             setGoToCart(true);
               addItem(data, quantity);
             

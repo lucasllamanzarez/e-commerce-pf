@@ -1,0 +1,11 @@
+.Cart {
+    display: flex;
+    border-bottom: 1px solid grey;
+    max-width: 500px;
+    margin: 1rem auto;
+}
+
+.Cart img {
+    width: 100px;
+    margin-right: 1rem;
+}

@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './Navbar.css';
-import Cartwidget from '../Cartwidget/Cartwidget';
 import { Link } from 'react-router-dom';
+import CartWidget from '../Cartwidget/Cartwidget';
 
 const NavBar = () => {
     //Genero estado del menu
@@ -28,7 +28,7 @@ const NavBar = () => {
                         <Link to ='/' className="barraNav-li">Productos</Link>
                         <Link to ='/About' className="barraNav-li">Sobre Nosotros</Link>
                         <Link to ='/Contact' className="barraNav-li">Contactanos</Link>
-                        <Link to = '/cart' className="barraNav-li"><Cartwidget /></Link>
+                        <Link to = '/Cart' className="barraNav-li"><CartWidget /></Link>
 
                     </ul>
                 </nav>
