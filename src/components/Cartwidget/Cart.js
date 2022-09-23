@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useCartContext } from './Cartcontext'; 
 import ItemCart from './ItemCart';
 import './Cart.css';
-import {Button,Typography} from '@mui/material';
+import {Button} from '@mui/material';
 
 const Cart = () => {
     const {cart, totalPrice} = useCartContext ();

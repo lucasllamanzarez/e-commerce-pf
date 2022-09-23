@@ -2,14 +2,27 @@ import React, { useState, useEffect } from 'react';
 import Item from '../Card/Item';
 import '../Items/ListContainer.css';
 import { Link } from 'react-router-dom';
+//Firebase
+import { collection, query, getDocs } from 'firebase/firestore';
+import { db } from '../../firebase/firebaseConfig';
 
 const ItemListContainer = () => {
 	const [products, setProducts] = useState([]);
 
+		const getProducts = async () => {
+			const q = query(
+				collection(db,'products')
+			);
+			const docs = [];
+			const querySnapshot = await getDocs(q);
+			querySnapshot.forEach((doc) => {
+					docs.push({...doc.data(), id: doc.id});
+			});
+			setProducts(docs);
+		};
+	
     useEffect(() => {
-        fetch('https://fakestoreapi.com/products')
-    .then(res=>res.json())
-.then(json=>setProducts(json))
+		getProducts();
 },
 []
 );
