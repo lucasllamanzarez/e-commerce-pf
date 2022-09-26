@@ -2,27 +2,17 @@ import React, { useState, useEffect } from 'react';
 import Item from '../Card/Item';
 import '../Items/ListContainer.css';
 import { Link } from 'react-router-dom';
-//Firebase
-import { collection, query, getDocs } from 'firebase/firestore';
-import { db } from '../../firebase/firebaseConfig';
+//Importo firestore
+import { getFirestore, collection, getDocs } from 'firebase/firestore';
 
 const ItemListContainer = () => {
 	const [products, setProducts] = useState([]);
 
-		const getProducts = async () => {
-			const q = query(
-				collection(db,'products')
-			);
-			const docs = [];
-			const querySnapshot = await getDocs(q);
-			querySnapshot.forEach((doc) => {
-					docs.push({...doc.data(), id: doc.id});
-			});
-			setProducts(docs);
-		};
-	
     useEffect(() => {
-		getProducts();
+        const querydb = getFirestore();
+		const queryCollection = collection(querydb, 'products');
+		getDocs(queryCollection)
+		.then(res => setProducts(res.docs.map(data => ({id: data.id, ...data.data()}))))
 },
 []
 );

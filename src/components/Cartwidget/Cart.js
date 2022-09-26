@@ -27,7 +27,7 @@ const Cart = () => {
 				);
 			})}
         <p color="white">
-            Total:  {totalPrice()}
+            Total: $ {totalPrice()}
         </p>
         <Button size="small" color="primary" >
             Finalizar Compra
