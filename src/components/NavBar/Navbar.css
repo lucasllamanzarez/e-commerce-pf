@@ -35,6 +35,15 @@ fill: white;
    
 }
 
+.btnMenuCat {
+    color: white;
+    text-decoration: double;
+}
+
+.liMenuCat {
+    background-color: black;
+    background: fixed black;
+}
 /*.barraNav-nav {
 
       

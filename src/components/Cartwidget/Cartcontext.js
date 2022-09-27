@@ -25,7 +25,6 @@ const CartProvider = ({ children }) => {
                         }
                         setCart(newCart)
                     }
-console.log('Carrito: ', cart);
 
     //Funcion Total Items
         const totalItems = () => cart.reduce((acumI, itemActual) => acumI + itemActual.quantity, 0); 

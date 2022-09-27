@@ -22,7 +22,7 @@ const Item2 = ({data}) => {
   }
 
     return (
-        <Card sx={{ maxWidth: 345}}>
+        <Card sx={{ maxWidth: 500 }}>
         <CardActionArea>
           <CardMedia
             component="img"
@@ -45,6 +45,9 @@ const Item2 = ({data}) => {
           {goToCart ? <Link to = '/cart' className="barraNav-li"><Button size="small" color="primary">
           Ir al carrito
           </Button></Link> : <Itemcount onAdd={onAdd}/>}
+          <Link to='/' className='li'><Button size="small" color="primary">
+          Seguir comprando
+          </Button></Link>
         </CardActions>
       </Card>
     )

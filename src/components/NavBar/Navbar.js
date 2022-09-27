@@ -1,7 +1,11 @@
 import {useState} from 'react'
+import * as React from 'react';
 import './Navbar.css';
 import { Link } from 'react-router-dom';
 import CartWidget from '../Cartwidget/Cartwidget';
+import Button from '@mui/material/Button';
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
 
 const NavBar = () => {
     //Genero estado del menu
@@ -10,6 +14,17 @@ const NavBar = () => {
             const toggleMenu = () => {
                 setmenu( !menu )
             }
+    
+    //Boton Categoria
+    const [anchorEl, setAnchorEl] = React.useState(null);
+    const open = Boolean(anchorEl);
+    const handleClick = (event) => {
+      setAnchorEl(event.currentTarget);
+    };
+    const handleClose = () => {
+      setAnchorEl(null);
+    };
+
 
     return (
             <div className="barraNav">
@@ -25,10 +40,22 @@ const NavBar = () => {
 
                 <nav className={ `barraNav-nav ${menu ? 'isActive' : ''}`}>
                     <ul className="barraNav-ul">
-                        <Link to ='/' className="barraNav-li">Productos</Link>
-                        <Link to ='/About' className="barraNav-li">Sobre Nosotros</Link>
-                        <Link to ='/Contact' className="barraNav-li">Contactanos</Link>
-                        <Link to = '/Cart' className="barraNav-li"><CartWidget /></Link>
+                        <Button><Link to ='/' className="barraNav-li">Productos</Link></Button>
+
+                        <Button aria-controls={open ? 'demo-positioned-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined}
+                        onClick={handleClick} className="btnMenuCat">
+                        Categoria
+                        </Button>
+                        <Menu id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{
+                        'aria-labelledby': 'basic-button'}}>
+                        <MenuItem className="liMenuCat" onClick={handleClose}><Link to ='/category/Monitores' className="barraNav-li liMenuCat">Monitores</Link></MenuItem>
+                        <MenuItem className="liMenuCat" onClick={handleClose}><Link to ='/category/Placas de video' className="barraNav-li liMenuCat">Placas de video</Link></MenuItem>
+                        <MenuItem lassName="liMenuCat" onClick={handleClose}><Link to ='/category/Discos Rigidos y SSD' className="barraNav-li liMenuCat">Discos Rigidos y SSD</Link></MenuItem>
+                        </Menu>
+        
+                        <Button><Link to ='/About' className="barraNav-li">Sobre Nosotros</Link></Button>
+                        <Button><Link to ='/Contact' className="barraNav-li">Contactanos</Link></Button>
+                        <Button><Link to = '/Cart' className="barraNav-li"><CartWidget /></Link></Button>
 
                     </ul>
                 </nav>

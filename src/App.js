@@ -12,6 +12,7 @@ import ItemDetail from './Views/ItemDetail/ItemDetail';
 import Cart from './components/Cartwidget/Cart';
 //CONTEXT
 import CartProvider from './components/Cartwidget/Cartcontext';
+import ItemCategory from './components/Items/ItemCategory';
 
 const App = () => {
   return (
@@ -21,6 +22,7 @@ const App = () => {
               <Navbar />
               <Routes>
                     <Route path='/' element={<Home />}/>
+                    <Route path='/category/:catId' element={<ItemCategory />}/>
                     <Route path='/about' element={<About />}/>
                     <Route path='/contact' element={<Contact />}/>
                     <Route path='/detail/:id' element={<ItemDetail />}/>
