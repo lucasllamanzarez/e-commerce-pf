@@ -19,7 +19,7 @@ const Itemcount = ({onAdd}) => {
     if (counter > stock) {
                     counter = stock
         } else if (counter < 0) {
-                counter = 0;
+                counter = 0
     }   
 
     return (
@@ -32,11 +32,12 @@ const Itemcount = ({onAdd}) => {
         <Button size="small" color="primary" onClick={handlecountup}>
           +
         </Button>
-        <Button size="small" color="primary" onClick={() => onAdd(counter)}>
+        { counter === 0 ? <Button size="small" color="primary" onClick={() => onAdd(counter)} disabled>
             Agregar Producto
-          </Button>
-          
-        </CardActions>    
+        </Button> : <Button size="small" color="primary" onClick={() => onAdd(counter)}>
+            Agregar Producto
+        </Button>}        
+        </CardActions>
         
     )
      

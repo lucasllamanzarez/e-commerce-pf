@@ -3,9 +3,18 @@
     border-bottom: 1px solid grey;
     max-width: 500px;
     margin: 1rem auto;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    background: whitesmoke;
 }
 
 .Cart img {
     width: 100px;
+    margin: 1.5rem;
+}
+
+.CartButton {
+    display: flex;
     margin-right: 1rem;
+    padding-top: 1rem;
 }

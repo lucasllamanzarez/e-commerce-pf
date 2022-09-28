@@ -1,9 +1,19 @@
 .li {
     list-style: none;
+    text-decoration: none;
     margin: 0 .5em;
     color: white;
 }
 
 .container {
     padding:5em;
+}
+
+.container2 {
+    padding:1em;
+}
+
+.vaciar {
+    text-align:end;
+    margin-right: 27rem;
 }

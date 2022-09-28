@@ -12,10 +12,10 @@ const Item = ({data}) => {
           alt="Productos RiseTech"
         />
         <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
+          <Typography variant="h6" color="text.secondary" component="div">
             {data.title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="h5" gutterBottom>
             $ {data.price}
           </Typography>
         </CardContent>

@@ -3,16 +3,19 @@ import { Link } from 'react-router-dom';
 import { useCartContext } from './Cartcontext'; 
 import ItemCart from './ItemCart';
 import './Cart.css';
-import {Button} from '@mui/material';
+import {Button, Typography} from '@mui/material';
 
 const Cart = () => {
-    const {cart, totalPrice} = useCartContext ();
+    const {cart, totalPrice, clearCart} = useCartContext ();
 
     if (cart.length === 0){
         return(
             <div className='container'>
-                <p>No hay elementos en el carrito</p>
-                <Link to='/' className='li'>Comenzar a comprar</Link>
+                <Typography variant='h3' color='white'>No hay items en el carrito</Typography>
+                <br></br>
+                <br></br>
+                <br></br>
+                <Button variant="contained"><Link to='/' className='li'>Ver Productos</Link></Button>
             </div>
         );
     }
@@ -26,13 +29,23 @@ const Cart = () => {
 					</div>
 				);
 			})}
-        <p color="white">
-            Total: $ {totalPrice()}
-        </p>
-        <Button size="small" color="primary" >
-            Finalizar Compra
+            
+        <div className='vaciar'>
+            <Button size="small" color="primary" variant="contained" onClick={() => clearCart()}>
+                Vaciar Carrito
+            </Button>
+        </div>
+        <div> 
+            <Typography color="white">
+                Total: $ {totalPrice()}
+            </Typography>
+        </div>
+        <div className='container2'>
+            <Button size="small" color="primary" variant="contained" >
+                Finalizar Compra
             </Button> 
 		</div>
+    </div>
 	);
 };
 

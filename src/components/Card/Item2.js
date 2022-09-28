@@ -33,10 +33,11 @@ const Item2 = ({data}) => {
             <Typography gutterBottom variant="h5" component="div">
             {data.title}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <Typography variant="body1" color="text.secondary">
             {data.description}
             </Typography>
-            <Typography variant="body2" color="text.secondary">
+            <br></br>
+            <Typography variant="h4" color="text.secondary">
             $ {data.price}
             </Typography>
           </CardContent>

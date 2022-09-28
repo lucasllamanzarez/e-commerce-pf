@@ -9,17 +9,19 @@ const ItemCart = (data) => {
  
   return (
     <div className='Cart'>
-        <img src={data.data.image}></img>
+        <img src={data.data.image} alt='Productos Rise'></img>
             <div>
-            <Typography variant="body2" color="white" textAlign='left'>
+            <Typography variant="body2"  textAlign='left'>
                     <p>Producto: {data.data.title}</p>
                     <p>Cantidad: {data.data.quantity}</p>
                     <p>Precio Unitario: {data.data.price}</p>
                     <p>Subtotal: $ {data.data.quantity * data.data.price}</p>
                 </Typography>
-            <Button size="small" color="primary" onClick={() => remItem(data.data.id)}>
+            </div>
+        <div className='CartButton'>    
+        <Button size="small" color="primary" onClick={() => remItem(data.data.id)}>
             Eliminar
-            </Button>  
+        </Button>
         </div>
     </div>
   )

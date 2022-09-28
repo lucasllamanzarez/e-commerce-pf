@@ -16,7 +16,7 @@ const NavBar = () => {
             }
     
     //Boton Categoria
-    const [anchorEl, setAnchorEl] = React.useState(null);
+    const [anchorEl, setAnchorEl] = useState(null);
     const open = Boolean(anchorEl);
     const handleClick = (event) => {
       setAnchorEl(event.currentTarget);
@@ -40,19 +40,17 @@ const NavBar = () => {
 
                 <nav className={ `barraNav-nav ${menu ? 'isActive' : ''}`}>
                     <ul className="barraNav-ul">
-                        <Button><Link to ='/' className="barraNav-li">Productos</Link></Button>
-
                         <Button aria-controls={open ? 'demo-positioned-menu' : undefined} aria-haspopup="true" aria-expanded={open ? 'true' : undefined}
-                        onClick={handleClick} className="btnMenuCat">
-                        Categoria
-                        </Button>
+                        onClick={handleClick} className="btnMenuCat"><Link to ='/' className="barraNav-li">Productos</Link></Button>
+
                         <Menu id="basic-menu" anchorEl={anchorEl} open={open} onClose={handleClose} MenuListProps={{
                         'aria-labelledby': 'basic-button'}}>
+                        <MenuItem>Categorias</MenuItem>
                         <MenuItem className="liMenuCat" onClick={handleClose}><Link to ='/category/Monitores' className="barraNav-li liMenuCat">Monitores</Link></MenuItem>
                         <MenuItem className="liMenuCat" onClick={handleClose}><Link to ='/category/Placas de video' className="barraNav-li liMenuCat">Placas de video</Link></MenuItem>
-                        <MenuItem lassName="liMenuCat" onClick={handleClose}><Link to ='/category/Discos Rigidos y SSD' className="barraNav-li liMenuCat">Discos Rigidos y SSD</Link></MenuItem>
+                        <MenuItem className="liMenuCat" onClick={handleClose}><Link to ='/category/Discos Rigidos y SSD' className="barraNav-li liMenuCat">Discos Rigidos y SSD</Link></MenuItem>
                         </Menu>
-        
+
                         <Button><Link to ='/About' className="barraNav-li">Sobre Nosotros</Link></Button>
                         <Button><Link to ='/Contact' className="barraNav-li">Contactanos</Link></Button>
                         <Button><Link to = '/Cart' className="barraNav-li"><CartWidget /></Link></Button>
