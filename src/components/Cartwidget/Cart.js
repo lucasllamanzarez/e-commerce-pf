@@ -3,7 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useCartContext } from './Cartcontext'; 
 import ItemCart from './ItemCart';
 import './Cart.css';
-import {Button, Typography} from '@mui/material';
+import {Button} from '@mui/material';
 import {getFirestore, collection, addDoc} from 'firebase/firestore';
 import Swal from 'sweetalert2';
 
@@ -58,8 +58,8 @@ const Cart = () => {
     //Condicion para renderizar msj o renderizar carrito
     if (cart.length === 0){
         return(
-            <div className='container'>
-                <Typography variant='h3' color='white'>No hay items en el carrito</Typography>
+            <div className='container'> 
+                <p><strong>No hay items en el carrito</strong></p>
                 <br></br>
                 <br></br>
                 <br></br>
@@ -86,12 +86,12 @@ const Cart = () => {
             </Button>
         </div>
         <div> 
-            <Typography color="white">
+            <p style={{ color: "white", fontSize:"25px", padding: "15px"}}>
                 Total: $ {totalPrice()}
-            </Typography>
+            </p>
             <br></br>
         </div>
-        <Typography variant='h4' color="white" className='tipo'>Completar los datos para finalizar la compra</Typography>
+        <p className='tipo' style={{ color: "white", fontSize:"35px"}} >Completar los datos para finalizar la compra</p>
         <br></br>
         <form className='form'>
         <div>

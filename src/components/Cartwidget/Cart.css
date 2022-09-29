@@ -9,6 +9,11 @@
     padding:5em;
 }
 
+.container p {
+    color: white;
+    font-size: 40px;
+}
+
 .container2 {
     padding:1em;
     text-align: center;
@@ -16,7 +21,7 @@
 
 .vaciar {
     text-align:end;
-    margin-right: 27rem;
+    margin-right: 26.5rem;
 }
 
 .tipo {

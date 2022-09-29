@@ -1,22 +1,22 @@
 import React from 'react'
 import '../Cartwidget/itemCart.css';
 import { useCartContext } from './Cartcontext'; 
-import {Button,Typography} from '@mui/material';
+import {Button} from '@mui/material';
 
 const ItemCart = (data) => {
     //Traigo el useCartContext para el boton eliminar
         const { remItem } = useCartContext();
  
-  return (
+  return ( 
     <div className='Cart'>
         <img src={data.data.image} alt='Productos Rise'></img>
             <div>
-            <Typography variant="body2"  textAlign='left'>
+                <div>
                     <p>Producto: {data.data.title}</p>
                     <p>Cantidad: {data.data.quantity}</p>
                     <p>Precio Unitario: {data.data.price}</p>
                     <p>Subtotal: $ {data.data.quantity * data.data.price}</p>
-                </Typography>
+                </div>
             </div>
         <div className='CartButton'>    
         <Button size="small" color="primary" onClick={() => remItem(data.data.id)}>

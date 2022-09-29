@@ -8,6 +8,10 @@
     background: whitesmoke;
 }
 
+.Cart div {
+    text-align: left;
+}
+
 .Cart img {
     width: 100px;
     margin: 1.5rem;
