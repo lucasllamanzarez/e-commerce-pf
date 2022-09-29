@@ -11,9 +11,37 @@
 
 .container2 {
     padding:1em;
+    text-align: center;
 }
 
 .vaciar {
     text-align:end;
     margin-right: 27rem;
+}
+
+.tipo {
+    border-bottom: 1px solid grey;
+}
+
+.form {
+    display:grid;
+    justify-content: center;
+    margin: 1em;
+}
+.form div {
+    margin: 1em;
+    text-align: center;
+}
+
+.form label {
+    color: white;
+    font-size: medium;
+}
+
+.form label input {
+    margin: 1em;
+}
+
+.form input {
+    color: black;
 }

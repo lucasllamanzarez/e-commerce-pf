@@ -14,6 +14,7 @@ import Cart from './components/Cartwidget/Cart';
 import CartProvider from './components/Cartwidget/Cartcontext';
 import ItemCategory from './components/Items/ItemCategory';
 
+
 const App = () => {
   return (
       <Router>
