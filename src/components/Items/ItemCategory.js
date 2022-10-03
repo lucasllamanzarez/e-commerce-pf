@@ -2,12 +2,14 @@ import React, { useState, useEffect } from 'react';
 import Item from '../Card/Item';
 import '../Items/ListContainer.css';
 import { Link, useParams } from 'react-router-dom';
+import Progress from '../../components/Progress/Progress';
 //Importo firestore
 import { getFirestore, collection, getDocs, query, where } from 'firebase/firestore';
 
 const ItemCategory = () => {
 	const [products, setProducts] = useState([]);
-    const { catId } = useParams();
+    	const { catId } = useParams();
+			const [isLoading, setIsLoading] = useState(true);
     
     useEffect(() => {
         const querydb = getFirestore();
@@ -15,12 +17,19 @@ const ItemCategory = () => {
 		const queryFilter = query(queryCollection, where('category', '==', catId))
 				getDocs(queryFilter)
 					.then(res => setProducts(res.docs.map(data => ({id: data.id, ...data.data()}))))
+					setTimeout(() => {
+						setIsLoading(false);
+					}, 300);
 },
 [catId]
 );
 
 	return (
-		<div className='List-container'>
+		<>
+			{isLoading ? (<div className='Loader'>
+				<Progress />
+			</div>) : (
+		<div className='List-container-cat'>
 			{products.map((product) => {
 				return (
 					<div key={product.id}>
@@ -31,6 +40,7 @@ const ItemCategory = () => {
 				);
 			})}
 		</div>
+		)}</>
 	);
 };
 

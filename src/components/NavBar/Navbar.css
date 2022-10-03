@@ -1,5 +1,7 @@
 .barraNav {
    width: 100%;   
+   background: fixed repeat;
+   overflow: hidden;
    background-color: black;
    padding: 1em;
 
@@ -10,10 +12,6 @@
 
    color: white;
 }
-
-/*.barraNav-h1 {
-   
-}*/
 
 .barraNav-a {
 text-decoration: none;
@@ -37,17 +35,14 @@ fill: white;
 
 .btnMenuCat {
     color: white;
-    text-decoration: double;
+    text-decoration: none;
 }
 
 .liMenuCat {
     background-color: black;
     background: fixed black;
 }
-/*.barraNav-nav {
 
-      
-}*/
 
 .barraNav-ul {
 
