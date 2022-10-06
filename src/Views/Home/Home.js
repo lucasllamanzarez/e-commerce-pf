@@ -1,7 +1,9 @@
 import React from 'react'
 import ItemListContainer from '../../components/Items/ItemListContainer'
 
+
 const Home = () => {
+
   return (
     <div style={{
         display: 'flex',
@@ -11,7 +13,6 @@ const Home = () => {
         padding: '25px',
         color: 'white'
     }}>
-
             <h1>Bienvenidos a Rise Technology</h1>
 
             <ItemListContainer />

@@ -1,8 +1,23 @@
-.fabout {
-    display: 'flex';
+.divCont {
+    display: flex;
     justify-content: center;
     flex-direction: column;
-    align-items: center;    
-    padding: '25px';
-    color: 'white';
+    align-items: center;
+    padding: 25px;
+    color: white;
+    overflow: hidden;
 }
+
+.divCont p {
+    padding: 20px;
+    margin-left: 40px;
+    margin-right: 40px;
+    text-align: justify;
+}
+
+.divCont img {
+        display: flex;
+        justify-content: center;
+        width: 650px;
+        padding-top: 30px;
+    }
