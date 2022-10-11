@@ -37,23 +37,10 @@
     margin-left: 400px;
     margin-right: 400px;
     margin-bottom: 25px;
-    padding-bottom: 25px;
+    padding-bottom: 5px;
     background-color: whitesmoke;
 }
 .form div {
-    margin: 1em;
+    margin: 0.2em;
     text-align: center;
-}
-
-.form label {
-    color: white;
-    font-size: medium;
-}
-
-.form label input {
-    margin: 1em;
-}
-
-.form input {
-    color: black;
 }

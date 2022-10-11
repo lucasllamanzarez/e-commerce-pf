@@ -117,7 +117,7 @@ const Cart = () => {
             </p>
             <br></br>
         </div>
-        <p className='tipo' style={{ color: "white", fontSize:"35px"}} >Completar los datos para finalizar la compra</p>
+        <p className='tipo' style={{ color: "white", fontSize:"35px"}} >Completa los datos para finalizar la compra</p>
         <br></br>
         <Formik
 				initialValues={{ name: '', surname: '', email: '', phone: '', address: '', cp:'',}}
@@ -166,6 +166,7 @@ const Cart = () => {
 							onChange={handleChange}
 							value={values.email}
 							onBlur={handleBlur}
+							error=''
 						/>
 						{errors.email && touched.surname && errors.email}
 						<TextField

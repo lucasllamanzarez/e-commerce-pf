@@ -6,6 +6,8 @@ import * as yup from 'yup';
 import { Formik } from 'formik';
 // SWEET ALERT
 import Swal from 'sweetalert2';
+//FIREBASE
+import {getFirestore, collection, addDoc} from 'firebase/firestore';
 
 //VALIDACION
 const yupSchema = yup
@@ -27,12 +29,29 @@ const yupSchema = yup
 	})
 	.required();
 
+//FECHA Y HORA 
+let today = new Date();
+let date = today.toLocaleString();
+
 //SUBMIT - CAPTURA DE DATOS
 const submitHandler = (values, resetForm) => {
-	console.log(values);
-	Swal.fire( `${values.name}, hemos recibido su consulta`,
-                    `Esperamos poder resolver todas sus dudas a la brevedad`,
+	
+//Genero constante para pasar datos de consulta	
+	const addConsult = {
+				name: `${values.name}`, 
+				surname: `${values.surname}`, 
+				email: `${values.email}`, 
+				consult: `${values.consult}`,
+				date: `${date}`,
+	}
+	const db = getFirestore();
+    const orders = collection(db, 'contact');
+        addDoc(orders, addConsult)
+		.then(({id}) => setTimeout(() => {
+			Swal.fire( `${values.name}, hemos recibido su consulta`,
+                    `Su numero de seguimiento es ${id}`,
                     'info');
+				}, 50));
 	resetForm();
 };
 
