@@ -110,6 +110,9 @@ const Cart = () => {
             <Button size="small" color="primary" variant="contained" onClick={() => clearCart()}>
                 Vaciar Carrito
             </Button>
+			<Button size="small" color="primary" variant="contained" style={{margin: '15px'}}><Link to='/' className='li'>
+          Seguir comprando
+          </Link></Button>
         </div>
         <div> 
             <p style={{ color: "white", fontSize:"25px", padding: "15px"}}>
