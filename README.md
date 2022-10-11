@@ -1,3 +1,9 @@
+# Resume
+Se utilizan los Frameworks Material UI, Bootstrap Icon, Formik y yup para validaciones.
+
+# DataBase
+Se utiliza Firebase para manejo de datos.
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
